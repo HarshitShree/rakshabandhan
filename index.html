@@ -191,13 +191,15 @@
 
             <!-- Episodes Area -->
             <div id="episodes" class="px-4 md:px-12 pt-10">
-                <div class="flex items-end justify-between mb-4">
-                    <h2 class="text-2xl md:text-3xl font-bold">Episodes</h2>
-                    <select id="season-selector" class="bg-zinc-800 text-white border border-zinc-600 rounded px-4 py-2 font-semibold outline-none" onchange="renderSeason(this.value)">
-                        <!-- Populated by JS -->
-                    </select>
-                </div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">Episodes</h2>
                 <div class="text-gray-400 text-sm mb-6 max-w-3xl">Watch all the iconic moments. Every fight, every joke, and every time someone cried over DSE.</div>
+                
+                <!-- Season Buttons Array -->
+                <div id="season-selector-container" class="flex flex-wrap gap-2 md:gap-4 mb-6">
+                    <!-- Populated by JS -->
+                </div>
+
+                <h3 id="current-season-title" class="text-xl font-bold mb-4 text-white"></h3>
                 
                 <div class="flex flex-col gap-4" id="episode-list">
                     <!-- Populated by JS -->
@@ -451,16 +453,36 @@
         }
 
         function renderSeasonSelect() {
-            const select = document.getElementById('season-selector');
+            const container = document.getElementById('season-selector-container');
             let html = '';
             seasons.forEach((s, index) => {
-                html += `<option value="${index}">${s.title}</option>`;
+                // Shorten to "Season 1", "Season 2" etc. for the horizontal buttons
+                const shortName = s.title.split(':')[0];
+                html += `<button id="season-btn-${index}" onclick="renderSeason(${index})" class="whitespace-nowrap px-4 py-2 rounded font-semibold text-sm md:text-base border transition-colors ${index === 0 ? 'bg-white text-black border-white' : 'bg-zinc-800 text-white border-zinc-600 hover:bg-zinc-700'}">${shortName}</button>`;
             });
-            select.innerHTML = html;
+            container.innerHTML = html;
             renderSeason(0); // initial load
         }
 
         function renderSeason(index) {
+            // Update active state for buttons
+            seasons.forEach((_, i) => {
+                const btn = document.getElementById(`season-btn-${i}`);
+                if (btn) {
+                    if (i === index) {
+                        btn.className = "whitespace-nowrap px-4 py-2 rounded font-semibold text-sm md:text-base border transition-colors bg-white text-black border-white";
+                    } else {
+                        btn.className = "whitespace-nowrap px-4 py-2 rounded font-semibold text-sm md:text-base border transition-colors bg-zinc-800 text-white border-zinc-600 hover:bg-zinc-700";
+                    }
+                }
+            });
+
+            // Display current full season title
+            const titleEl = document.getElementById('current-season-title');
+            if (titleEl) {
+                titleEl.innerText = seasons[index].title;
+            }
+
             const container = document.getElementById('episode-list');
             const season = seasons[index];
             let html = '';
