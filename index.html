@@ -472,9 +472,9 @@
 
                 html += `
                     <div class="flex flex-col md:flex-row gap-4 p-4 rounded-lg hover:bg-zinc-800/80 transition-colors cursor-pointer group row-card border-b border-zinc-800 md:border-none" onclick="openModal('season', ${index}, ${epIndex})">
-                        <div class="flex items-center gap-4 md:w-1/4 flex-shrink-0">
-                            <span class="text-2xl font-black text-zinc-600 group-hover:text-white transition-colors w-8 text-center">${ep.ep}</span>
-                            <div class="relative w-full md:w-40 aspect-video rounded overflow-hidden bg-zinc-800">
+                        <div class="flex items-center gap-4 md:w-1/3 flex-shrink-0">
+    <span class="text-2xl font-black text-zinc-600 group-hover:text-white transition-colors w-8 text-center">${ep.ep}</span>
+    <div class="relative w-full md:w-72 aspect-video rounded overflow-hidden bg-zinc-800">
                                 ${mediaHTML}
                                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                     <div class="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center bg-black/50">▶</div>
