@@ -85,6 +85,23 @@
             transform: translateY(0);
             opacity: 1;
         }
+
+        /* BTS Gallery Styling */
+        .bts-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 8px solid #27272a; /* Polaroid-ish border */
+            border-bottom-width: 24px;
+            background-color: #27272a;
+        }
+        .bts-item:hover {
+            transform: scale(1.1) rotate(0deg) !important;
+            z-index: 40;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.8), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body class="text-white">
@@ -93,12 +110,10 @@
         <h1 class="text-3xl md:text-5xl mb-8 font-semibold tracking-wide text-center px-4">Who's watching?</h1>
         <div class="flex gap-6 md:gap-10">
             <div class="profile-card cursor-pointer group flex flex-col items-center" onclick="enterApp('Harshit')">
-                <!-- Pinterest Link for Profile 1 -->
                 <img src="https://i.pinimg.com/736x/89/16/5c/89165cacb22a2ee5e51b80d6c128bb49.jpg" alt="Harshit" class="profile-img w-24 h-24 md:w-36 md:h-36 rounded-md mb-4 shadow-lg group-hover:scale-105 transition-transform">
                 <span class="text-gray-400 group-hover:text-white transition-colors text-lg">Harshit</span>
             </div>
             <div class="profile-card cursor-pointer group flex flex-col items-center" onclick="enterApp('Yukti')">
-                <!-- Pinterest Link for Profile 2 -->
                 <img src="https://i.pinimg.com/736x/31/d8/35/31d835a498c4a0f86bfe8806fb65b7a4.jpg" alt="Yukti" class="profile-img w-24 h-24 md:w-36 md:h-36 rounded-md mb-4 shadow-lg group-hover:scale-105 transition-transform">
                 <span class="text-gray-400 group-hover:text-white transition-colors text-lg">Yukti</span>
             </div>
@@ -116,6 +131,7 @@
                     <a href="#" class="font-bold text-white">Home</a>
                     <a href="#episodes" class="hover:text-gray-400 transition-colors">Episodes</a>
                     <a href="#awards" class="hover:text-gray-400 transition-colors">Critically Acclaimed</a>
+                    <a href="#bts" class="hover:text-gray-400 transition-colors">Behind the Scenes</a>
                     <a href="#note" class="hover:text-gray-400 transition-colors">Director's Note</a>
                 </nav>
             </div>
@@ -127,7 +143,6 @@
         </header>
 
         <!-- Hero Section -->
-        <!-- Example of using a Pinterest image for the background -->
         <section class="relative h-[85vh] w-full bg-cover bg-center" style="background-image: url('https://cdn.discordapp.com/attachments/1540539997688701038/1540544944438120448/20250821_160507-EFFECTS.jpg?ex=6a8a57c8&is=6a890648&hm=f0514b6ed4c8dabf83e13e08da6dd85ea6762c883fd9d09c36541672d1190460&');">
             <div class="absolute inset-0 hero-vignette"></div>
             <div class="absolute inset-0 hero-gradient"></div>
@@ -144,12 +159,12 @@
                     <span class="text-green-500">100% Match</span>
                     <span>2026</span>
                     <span class="border border-gray-400 px-1 text-xs">U/A 13+</span>
-                    <span>3 Seasons</span>
+                    <span>6 Seasons</span>
                     <span class="text-xs px-2 py-0.5 bg-zinc-800 rounded">HD</span>
                 </div>
                 
                 <p class="text-white text-base md:text-lg mb-6 drop-shadow-md max-w-xl line-clamp-3">
-                    A slow-burn sibling saga featuring intense negotiations over sleep, shared trauma from CUET, lost bets and a stuffed bear named Lilo who threatens everyone.
+                    A slow-burn sibling saga featuring intense negotiations over sleep, shared trauma from CUET, lost bets, and a stuffed bear named Lilo who threatens everyone.
                 </p>
                 
                 <div class="flex gap-3">
@@ -193,25 +208,21 @@
             <div id="awards" class="mt-20 px-4 md:px-12">
                 <h2 class="text-xl md:text-2xl font-bold mb-6 drop-shadow-md">Critically Acclaimed Awards</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <!-- Award 1 -->
                     <div class="bg-zinc-900/80 p-6 rounded-lg border border-zinc-800 flex flex-col items-center text-center hover:bg-zinc-800 transition-colors row-card">
                         <div class="text-4xl mb-3">💼</div>
                         <div class="text-sm md:text-base font-bold text-white mb-1">Best LinkedIn Post</div>
                         <div class="text-xs text-gray-400">33k Views Winner</div>
                     </div>
-                    <!-- Award 2 -->
                     <div class="bg-zinc-900/80 p-6 rounded-lg border border-zinc-800 flex flex-col items-center text-center hover:bg-zinc-800 transition-colors row-card">
                         <div class="text-4xl mb-3">🧸</div>
                         <div class="text-sm md:text-base font-bold text-white mb-1">Best Use of Lilo</div>
                         <div class="text-xs text-gray-400">Superior Bug Protection</div>
                     </div>
-                    <!-- Award 3 -->
                     <div class="bg-zinc-900/80 p-6 rounded-lg border border-zinc-800 flex flex-col items-center text-center hover:bg-zinc-800 transition-colors row-card">
                         <div class="text-4xl mb-3">🛌</div>
                         <div class="text-sm md:text-base font-bold text-white mb-1">Worst Negotiator</div>
                         <div class="text-xs text-gray-400">Lost against 4 hrs of sleep</div>
                     </div>
-                    <!-- Award 4 -->
                     <div class="bg-zinc-900/80 p-6 rounded-lg border border-zinc-800 flex flex-col items-center text-center hover:bg-zinc-800 transition-colors row-card">
                         <div class="text-4xl mb-3">🥇</div>
                         <div class="text-sm md:text-base font-bold text-white mb-1">Penny to my Sheldon</div>
@@ -220,8 +231,18 @@
                 </div>
             </div>
 
+            <!-- Behind The Scenes (Randomized Gallery) -->
+            <div id="bts" class="mt-24 px-4 md:px-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2 drop-shadow-md">Behind the Scenes</h2>
+                <div class="text-gray-400 text-sm mb-8 max-w-3xl">Unseen footage, random bloopers, and moments that didn't make the final cut. Click to expand.</div>
+                
+                <div class="columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6" id="bts-gallery">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
             <!-- Director's Note -->
-            <div id="note" class="mt-20 px-4 md:px-12">
+            <div id="note" class="mt-24 px-4 md:px-12">
                 <div class="bg-gradient-to-r from-zinc-900 to-black border-l-4 border-[var(--netflix-red)] p-8 rounded-r-lg shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 opacity-10 text-9xl pointer-events-none">❝</div>
                     <h2 class="text-2xl font-bold mb-4 text-white">Director's Note</h2>
@@ -238,7 +259,7 @@
             
         </main>
 
-        <footer class="text-center py-8 text-gray-500 text-sm border-t border-zinc-900 bg-black">
+        <footer class="text-center py-8 text-gray-500 text-sm border-t border-zinc-900 bg-black mt-10">
             <p>Made with ❤️ by Harshit for Yukti.</p>
             <p class="mt-2">Not affiliated with actual Netflix, but our bond is definitely Top 10 in India.</p>
         </footer>
@@ -254,7 +275,7 @@
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
         <div class="relative bg-zinc-900 rounded-lg overflow-hidden shadow-2xl max-w-3xl w-full mx-4 transform scale-95 transition-transform duration-300" id="media-modal-content">
             <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-8 h-8 bg-black/50 hover:bg-black text-white rounded-full flex items-center justify-center transition-colors">✕</button>
-            <div id="modal-media-container" class="w-full aspect-video bg-black relative">
+            <div id="modal-media-container" class="w-full max-h-[70vh] aspect-video bg-black relative flex justify-center">
                 <!-- Media injected here -->
             </div>
             <div class="p-6 md:p-8">
@@ -269,138 +290,97 @@
 
     <script>
         // --- DATA ---
-        // INSTRUCTIONS:
-        // 1. For PINTEREST PHOTOS: Right-click the image on Pinterest and select "Copy image address". 
-        //    It should look like: https://i.pinimg.com/736x/... or https://i.pinimg.com/originals/...
-        // 2. For DISCORD VIDEOS: Right-click the video in Discord and select "Copy Link". 
-        //    It should end in .mp4, looking like: https://cdn.discordapp.com/attachments/.../....mp4
-
+        
         const top10Items = [
-            { 
-                title: "Maths exam ka trauma jo abhi aapko bhi milega :)", 
-                photo: "https://i.pinimg.com/736x/2d/ff/6b/2dff6b0f754554f0dbcf7016b132213a.jpg" // Pinterest Photo Link Example
-            },
-            { 
-                title: "Hairstyle day pe poore college ke saamne barber", 
-                // Discord Video Link Example (Ends in .mp4) - Put your actual Discord link here
-                video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540541418898989116/VID-20241109-WA0061.mp4?ex=6a8a5480&is=6a890300&hm=faa2c2927d8cf49c60e6aef379913bb47a1190248fae662f82b276cd1ffd1810&" 
-            },
-            { 
-                title: "Bhaidooj pe mujhe milne waala princess treatment", 
-                photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540541791860957356/20251023_113454-ANIMATION.gif?ex=6a8a54d9&is=6a890359&hm=baea3dbbf42ca03dca2b057d0154cdbddc24fdd27175734493045f46ddbcfae6&" 
-            },
-            { 
-                title: "Officially Guardian Declare hogya ab to", 
-                photo: "https://i.pinimg.com/736x/8f/7c/17/8f7c17dbab155d05c0caa93f65bb2f1b.jpg" 
-            },
-            { 
-                title: "Lilo protecting you from bugs", 
-                photo: "https://i.pinimg.com/736x/b7/c3/c8/b7c3c807310b120d1865259e8e1b8351.jpg" 
-            },
-            { 
-                title: "Rakshabandhan for the first time ever, iske pehle around 6-7 years se celebrate nhi kara tha :)", 
-                photo: "https://i.pinimg.com/736x/52/25/26/52252688f85239dcd1f4fe9bfe0f835c.jpg" 
-            },
-            { 
-                title: "The only reason aapko aur aapki harkatien jhelta hoon main", 
-                photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540543099875496036/20250810_195621.jpg?ex=6a8a5610&is=6a890490&hm=c66150a5559ff9d6205af71ea0438cecb77f0833be58869407a18ba94908a734&" // Another Discord example
-            },
-            { 
-                title: "Pair tutne pe fu, aik ye wapas se karenge maze aaye the", 
-                video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540542146787156139/Snapchat-54643231.mp4?ex=6a8a552d&is=6a8903ad&hm=6bcd315506fff3b126ecc556a45ab20d63bdda4e0f225a7386f89203a65a4cd0&" 
-            },
-            { 
-                title: "Do hile hue log", 
-                photo: "https://i.pinimg.com/736x/e0/45/12/e04512de41f56dee77c3d7b174ff184b.jpg" 
-            },
-            { 
-                title: "Mera bed churaliya moti", 
-                photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540544395399397516/20251128_065827.jpg?ex=6a8a5745&is=6a8905c5&hm=019ceab33730a9470745de98445e0e95c70a7ce559c45938d5224bbea3d2fca5&" 
-            }
+            { title: "Maths exam ka trauma jo abhi aapko bhi milega :)", photo: "https://i.pinimg.com/736x/2d/ff/6b/2dff6b0f754554f0dbcf7016b132213a.jpg" },
+            { title: "Hairstyle day pe poore college ke saamne barber", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540541418898989116/VID-20241109-WA0061.mp4?ex=6a8a5480&is=6a890300&hm=faa2c2927d8cf49c60e6aef379913bb47a1190248fae662f82b276cd1ffd1810&" },
+            { title: "Bhaidooj pe mujhe milne waala princess treatment", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540541791860957356/20251023_113454-ANIMATION.gif?ex=6a8a54d9&is=6a890359&hm=baea3dbbf42ca03dca2b057d0154cdbddc24fdd27175734493045f46ddbcfae6&" },
+            { title: "Officially Guardian Declare hogya ab to", photo: "https://i.pinimg.com/736x/8f/7c/17/8f7c17dbab155d05c0caa93f65bb2f1b.jpg" },
+            { title: "Lilo protecting you from bugs", photo: "https://i.pinimg.com/736x/b7/c3/c8/b7c3c807310b120d1865259e8e1b8351.jpg" },
+            { title: "Rakshabandhan for the first time ever, iske pehle around 6-7 years se celebrate nhi kara tha :)", photo: "https://i.pinimg.com/736x/52/25/26/52252688f85239dcd1f4fe9bfe0f835c.jpg" },
+            { title: "The only reason aapko aur aapki harkatien jhelta hoon main", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540543099875496036/20250810_195621.jpg?ex=6a8a5610&is=6a890490&hm=c66150a5559ff9d6205af71ea0438cecb77f0833be58869407a18ba94908a734&" },
+            { title: "Pair tutne pe fu, aik ye wapas se karenge maze aaye the", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540542146787156139/Snapchat-54643231.mp4?ex=6a8a552d&is=6a8903ad&hm=6bcd315506fff3b126ecc556a45ab20d63bdda4e0f225a7386f89203a65a4cd0&" },
+            { title: "Do hile hue log", photo: "https://i.pinimg.com/736x/e0/45/12/e04512de41f56dee77c3d7b174ff184b.jpg" },
+            { title: "Mera bed churaliya moti", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540544395399397516/20251128_065827.jpg?ex=6a8a5745&is=6a8905c5&hm=019ceab33730a9470745de98445e0e95c70a7ce559c45938d5224bbea3d2fca5&" }
         ];
 
         const seasons = [
             {
                 id: "season1",
-                title: "Season 1: The clash of Titans",
+                title: "Season 1: The Clash of Titans",
                 episodes: [
-                    { 
-                        ep: "1", 
-                        title: "The Annoyance", 
-                        duration: "45m", 
-                        video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540546566094323742/Snapchat-893395462.mp4?ex=6a8a594b&is=6a8907cb&hm=2956b56eefa80a0b96ae1fc23255919823e8c856e9cac25dba5745600f9df5f1&", // Pinterest
-                        desc: "How this 1 miniscule girl annoyed the giant and did not let him consume food." 
-                    },
-                    { 
-                        ep: "2", 
-                        title: "The Crossover", 
-                        duration: "1h 12m", 
-                        photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540547151283617792/IMG_20240903_154709_1.jpg?ex=6a8a59d6&is=6a890856&hm=d9b31430ec4ac540fad9e27839ea14306d761af320e4e43497f8ae69a8dfd078&", // Discord 
-                        desc: "From manya didi ki chamchi the transition was made over to bhaiya kyuki bhaisa padhai karlea hain" 
-                    },
-                    { 
-                        ep: "3", 
-                        title: "The Trap", 
-                        duration: "50m", 
-                        photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540547198373339226/IMG-20240808-WA0006.jpg?ex=6a8a59e2&is=6a890862&hm=c33d2eec510a12af98777e949cac6f1d5fb0796b854acfdfd1a7ad55b333bef2&",
-                        desc: "The brilliance of yukti to feed the hippototapus food to lure him into a sense of security to later strike." 
-                    },
-                    { 
-                        ep: "4", 
-                        title: "Do or Die", 
-                        duration: "55m", 
-                        video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540547946997743637/VID-20240821-WA0022.mp4?ex=6a8a5a94&is=6a890914&hm=4f6c37cff2338d983f7db7ffcc7bb89da5fa891ca2e7ba3b5e80c041cced3f65&",
-                        desc: "The first Rakshabandhan clash, the titans collide head on to claim victory, alas the giant is subdued." 
-                    }
+                    { ep: "1", title: "The Annoyance", duration: "45m", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540546566094323742/Snapchat-893395462.mp4?ex=6a8a594b&is=6a8907cb&hm=2956b56eefa80a0b96ae1fc23255919823e8c856e9cac25dba5745600f9df5f1&", desc: "How this 1 miniscule girl annoyed the giant and did not let him consume food." },
+                    { ep: "2", title: "The Crossover", duration: "1h 12m", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540547151283617792/IMG_20240903_154709_1.jpg?ex=6a8a59d6&is=6a890856&hm=d9b31430ec4ac540fad9e27839ea14306d761af320e4e43497f8ae69a8dfd078&", desc: "From manya didi ki chamchi the transition was made over to bhaiya kyuki bhaisa padhai karlea hain" },
+                    { ep: "3", title: "The Trap", duration: "50m", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540547198373339226/IMG-20240808-WA0006.jpg?ex=6a8a59e2&is=6a890862&hm=c33d2eec510a12af98777e949cac6f1d5fb0796b854acfdfd1a7ad55b333bef2&", desc: "The brilliance of yukti to feed the hippototapus food to lure him into a sense of security to later strike." },
+                    { ep: "4", title: "Do or Die", duration: "55m", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540547946997743637/VID-20240821-WA0022.mp4?ex=6a8a5a94&is=6a890914&hm=4f6c37cff2338d983f7db7ffcc7bb89da5fa891ca2e7ba3b5e80c041cced3f65&", desc: "The first Rakshabandhan clash, the titans collide head on to claim victory, alas the giant is subdued." }
                 ]
             },
             {
                 id: "season2",
-                title: "Season 2: The plot thickens",
+                title: "Season 2: The Plot Thickens",
                 episodes: [
-                    { 
-                        ep: "1", title: "The first birthday", duration: "1h 20m", 
-                        video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540549238692515861/VID-20240729-WA0002.mp4?ex=6a8a5bc8&is=6a890a48&hm=aa6ac9498f283b058e8a1e46242e1ca18ce01061a12bd6906629431475508032&", 
-                        desc: "The giant celebrates his first birthday ever, even though the planners are uterly stooopid and he knows everything he is still pleasently surprised." 
-                    },
-                    { 
-                        ep: "2", title: "The bonding", duration: "45m", 
-                        photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540550049069797407/20241024_171755.jpg?ex=6a8a5c89&is=6a890b09&hm=8e166b7089109f7f69d50d6636e6bdfdc48ea3f11270ccc71e4b2ee1c0d30f49&", // Discord
-                        desc: "Thanks to CUET, something new, something unheard of is born. Bataunga sessions has entered the world and altered everything forever" 
-                    },
-                    { 
-                        ep: "3", title: "Baldie to baddie?", duration: "1h", 
-                        video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540550216204419122/VID-20241109-WA0057.mp4?ex=6a8a5cb1&is=6a890b31&hm=ab03213ea6d9c92066ec91c38e83f68694e32d669ffb99f199f4d229daa7812d&", 
-                        desc: "An impovrished little girl is lucky enough to get the world renowned stylist to help change her from a baldie to a baddie" 
-                    },
-                    { 
-                        ep: "4", title: "Malnutritioned Chipkali", duration: "25m", 
-                        photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540551635942514718/IMG-20241103-WA0085.jpg?ex=6a8a5e04&is=6a890c84&hm=e5ca3963cc5edb20eeec34954518ccc4ed91e563e29691dd3a4ff923e884ff28&", 
-                        desc: "With the celebration of the first ever bhaidooj, a new person is born, the Malnutritioned chipkali." 
-                    }
+                    { ep: "1", title: "The First Birthday", duration: "1h 20m", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540549238692515861/VID-20240729-WA0002.mp4?ex=6a8a5bc8&is=6a890a48&hm=aa6ac9498f283b058e8a1e46242e1ca18ce01061a12bd6906629431475508032&", desc: "The giant celebrates his first birthday ever, even though the planners are uterly stooopid and he knows everything he is still pleasently surprised." },
+                    { ep: "2", title: "The Bonding", duration: "45m", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540550049069797407/20241024_171755.jpg?ex=6a8a5c89&is=6a890b09&hm=8e166b7089109f7f69d50d6636e6bdfdc48ea3f11270ccc71e4b2ee1c0d30f49&", desc: "Thanks to CUET, something new, something unheard of is born. Bataunga sessions has entered the world and altered everything forever" },
+                    { ep: "3", title: "Baldie to Baddie?", duration: "1h", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540550216204419122/VID-20241109-WA0057.mp4?ex=6a8a5cb1&is=6a890b31&hm=ab03213ea6d9c92066ec91c38e83f68694e32d669ffb99f199f4d229daa7812d&", desc: "An impovrished little girl is lucky enough to get the world renowned stylist to help change her from a baldie to a baddie" },
+                    { ep: "4", title: "Malnutritioned Chipkali", duration: "25m", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540551635942514718/IMG-20241103-WA0085.jpg?ex=6a8a5e04&is=6a890c84&hm=e5ca3963cc5edb20eeec34954518ccc4ed91e563e29691dd3a4ff923e884ff28&", desc: "With the celebration of the first ever bhaidooj, a new person is born, the Malnutritioned chipkali." }
                 ]
             },
             {
                 id: "season3",
                 title: "Season 3: The Great Depression",
                 episodes: [
-                    { 
-                        ep: "1", title: "The Giant", duration: "1h", 
-                        photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552374295461978/IMG-20250428-WA0027.jpg?ex=6a8a5eb4&is=6a890d34&hm=9901d162eaeac9c3ea1808387e61cc8cdf18273a7eff2a334ace6397ed758add&", 
-                        desc: "The elephant spends his time bitching." 
-                    },
-                    { 
-                        ep: "2", title: "The Lizard", duration: "2h", 
-                        photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552644039409774/Screenshot_20250923_184526_WhatsApp.jpg?ex=6a8a5ef4&is=6a890d74&hm=464182c9691e3a9d18163a7bea3d7edb0e46e31dd383ff1f88b549fd49d5e063&", // Discord
-                        desc: "The baby crying just because she wants to do everything the Giant does." 
-                    },
-                    { 
-                        ep: "3", title: "Finale", duration: "Special", 
-                        video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552859374846012/VID-20250928-WA0003.mp4?ex=6a8a5f27&is=6a890da7&hm=6e934933446c3be1487aaf20e9e492dd35a6a51d4b4a235de3142a9943b9d39c&", 
-                        desc: "The Great depression hath been ended, but followed by something stronger. The Great Divide." 
-                    }
+                    { ep: "1", title: "The Giant", duration: "1h", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552374295461978/IMG-20250428-WA0027.jpg?ex=6a8a5eb4&is=6a890d34&hm=9901d162eaeac9c3ea1808387e61cc8cdf18273a7eff2a334ace6397ed758add&", desc: "The elephant spends his time bitching." },
+                    { ep: "2", title: "The Lizard", duration: "2h", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552644039409774/Screenshot_20250923_184526_WhatsApp.jpg?ex=6a8a5ef4&is=6a890d74&hm=464182c9691e3a9d18163a7bea3d7edb0e46e31dd383ff1f88b549fd49d5e063&", desc: "The baby crying just because she wants to do everything the Giant does." },
+                    { ep: "3", title: "The Swiggy Saga", duration: "35m", photo: "https://i.pinimg.com/736x/89/16/5c/89165cacb22a2ee5e51b80d6c128bb49.jpg", desc: "Countless Swiggy One orders just to survive the intense studying blocks." },
+                    { ep: "4", title: "Finale", duration: "Special", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552859374846012/VID-20250928-WA0003.mp4?ex=6a8a5f27&is=6a890da7&hm=6e934933446c3be1487aaf20e9e492dd35a6a51d4b4a235de3142a9943b9d39c&", desc: "The Great depression hath been ended, but followed by something stronger. The Great Divide." }
+                ]
+            },
+            {
+                id: "season4",
+                title: "Season 4: The DSE Era",
+                episodes: [
+                    { ep: "1", title: "20 Floors Up", duration: "42m", photo: "https://i.pinimg.com/736x/31/d8/35/31d835a498c4a0f86bfe8806fb65b7a4.jpg", desc: "The daily workout regimen of the giant involves climbing 20 floors of stairs, much to the chipkali's horror." },
+                    { ep: "2", title: "Placement Panic", duration: "1h 10m", photo: "https://i.pinimg.com/736x/8f/7c/17/8f7c17dbab155d05c0caa93f65bb2f1b.jpg", desc: "American Express mock interviews, Python errors, and SQL nightmares at Delhi School of Economics." },
+                    { ep: "3", title: "Peanut Butter & Parathas", duration: "30m", photo: "https://i.pinimg.com/736x/2d/ff/6b/2dff6b0f754554f0dbcf7016b132213a.jpg", desc: "When the tiffin is forgotten, the loyal sidekick (Penny) arrives to save Sheldon with emergency parathas." },
+                    { ep: "4", title: "The GATE Watch", duration: "1h", photo: "https://i.pinimg.com/736x/52/25/26/52252688f85239dcd1f4fe9bfe0f835c.jpg", desc: "Hours spent staring at a screen for a GATE score that decides the fate of the universe." }
+                ]
+            },
+            {
+                id: "season5",
+                title: "Season 5: Family Shenanigans",
+                episodes: [
+                    { ep: "1", title: "Mamma's Masterplan", duration: "50m", photo: "https://i.pinimg.com/736x/b7/c3/c8/b7c3c807310b120d1865259e8e1b8351.jpg", desc: "Traveling to Siliguri and Jaipur, attempting to get aesthetic photos while completely failing." },
+                    { ep: "2", title: "The Coding Catastrophe", duration: "48m", photo: "https://i.pinimg.com/736x/e0/45/12/e04512de41f56dee77c3d7b174ff184b.jpg", desc: "Harshit tries to build a personalized website. The server crashes. Chaos ensues." },
+                    { ep: "3", title: "11 PM Curfew", duration: "25m", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540544395399397516/20251128_065827.jpg?ex=6a8a5745&is=6a8905c5&hm=019ceab33730a9470745de98445e0e95c70a7ce559c45938d5224bbea3d2fca5&", desc: "The strict 11 PM to 6 AM sleep schedule gets violently interrupted by midnight cravings." },
+                    { ep: "4", title: "Plant-Based Wars", duration: "55m", photo: "https://i.pinimg.com/736x/89/16/5c/89165cacb22a2ee5e51b80d6c128bb49.jpg", desc: "The great debate over No Nonsense plant-based protein and trying to hit a 2.5kg weight loss goal." }
+                ]
+            },
+            {
+                id: "season6",
+                title: "Season 6: The Uncharted Future",
+                episodes: [
+                    { ep: "1", title: "The Internship Hustle", duration: "1h 5m", photo: "https://i.pinimg.com/736x/31/d8/35/31d835a498c4a0f86bfe8806fb65b7a4.jpg", desc: "Starting the FICCI internship. Realizing corporate life is just sending emails with 'Please find attached'." },
+                    { ep: "2", title: "99kg and Counting", duration: "40m", photo: "https://i.pinimg.com/736x/8f/7c/17/8f7c17dbab155d05c0caa93f65bb2f1b.jpg", desc: "Dumbbell workouts vs. the absolute necessity of ordering Alma Bakery and Cafe." },
+                    { ep: "3", title: "LinkedIn Influencer", duration: "35m", photo: "https://i.pinimg.com/736x/2d/ff/6b/2dff6b0f754554f0dbcf7016b132213a.jpg", desc: "Drafting 33k-view posts about LPG distribution dynamics while fighting over the AC remote." },
+                    { ep: "4", title: "Always Penny & Sheldon", duration: "1h 30m", photo: "https://i.pinimg.com/736x/52/25/26/52252688f85239dcd1f4fe9bfe0f835c.jpg", desc: "No matter where they go or what degrees they get, some things never change." }
                 ]
             }
+        ];
+
+        // 12 Random Items for the BTS Gallery
+        const btsItems = [
+            { title: "Caught Sleeping Again", photo: "https://i.pinimg.com/736x/b7/c3/c8/b7c3c807310b120d1865259e8e1b8351.jpg", desc: "Not even 5 minutes into the movie." },
+            { title: "Lilo's Revenge", photo: "https://i.pinimg.com/736x/8f/7c/17/8f7c17dbab155d05c0caa93f65bb2f1b.jpg", desc: "When the bear gets angry." },
+            { title: "Dancing Blooper", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540541418898989116/VID-20241109-WA0061.mp4?ex=6a8a5480&is=6a890300&hm=faa2c2927d8cf49c60e6aef379913bb47a1190248fae662f82b276cd1ffd1810&", desc: "We don't talk about this one." },
+            { title: "Post-Exam Delirium", photo: "https://i.pinimg.com/736x/2d/ff/6b/2dff6b0f754554f0dbcf7016b132213a.jpg", desc: "CUET fries the brain." },
+            { title: "The Swiggy Delivery Arrives", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540544395399397516/20251128_065827.jpg?ex=6a8a5745&is=6a8905c5&hm=019ceab33730a9470745de98445e0e95c70a7ce559c45938d5224bbea3d2fca5&", desc: "True happiness caught on camera." },
+            { title: "Leg Broken but Spirits High", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540542146787156139/Snapchat-54643231.mp4?ex=6a8a552d&is=6a8903ad&hm=6bcd315506fff3b126ecc556a45ab20d63bdda4e0f225a7386f89203a65a4cd0&", desc: "Taking care of the giant." },
+            { title: "Stolen Hoodie", photo: "https://i.pinimg.com/736x/e0/45/12/e04512de41f56dee77c3d7b174ff184b.jpg", desc: "Yes, I know you took it." },
+            { title: "Paratha Run", photo: "https://i.pinimg.com/736x/89/16/5c/89165cacb22a2ee5e51b80d6c128bb49.jpg", desc: "Emergency food delivery service." },
+            { title: "Unexpected Guest", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540543099875496036/20250810_195621.jpg?ex=6a8a5610&is=6a890490&hm=c66150a5559ff9d6205af71ea0438cecb77f0833be58869407a18ba94908a734&", desc: "Bugs everywhere." },
+            { title: "Staircase Champion", photo: "https://i.pinimg.com/736x/31/d8/35/31d835a498c4a0f86bfe8806fb65b7a4.jpg", desc: "Floor 20 conquered." },
+            { title: "Birthday Surprise Prep", photo: "https://i.pinimg.com/736x/52/25/26/52252688f85239dcd1f4fe9bfe0f835c.jpg", desc: "He already knew." },
+            { title: "The Ultimate Betrayal", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552859374846012/VID-20250928-WA0003.mp4?ex=6a8a5f27&is=6a890da7&hm=6e934933446c3be1487aaf20e9e492dd35a6a51d4b4a235de3142a9943b9d39c&", desc: "Eating the last slice of pizza." }
         ];
 
         // --- LOGIC ---
@@ -438,7 +418,6 @@
             let html = '';
             
             top10Items.forEach((item, index) => {
-                // Now perfectly supports Discord .mp4 links in the video tag or Pinterest links in the img tag
                 const mediaHTML = item.video 
                     ? `<video src="${item.video}" class="w-full h-[140px] object-cover opacity-80 group-hover:opacity-100 transition-opacity" autoplay loop muted playsinline crossorigin="anonymous"></video>`
                     : `<img src="${item.photo}" alt="Memory" class="w-full h-[140px] object-cover opacity-80 group-hover:opacity-100 transition-opacity">`;
@@ -475,7 +454,6 @@
             let html = '';
             
             season.episodes.forEach((ep, epIndex) => {
-                // Renders Discord video loop or Pinterest Image
                 const mediaHTML = ep.video 
                     ? `<video src="${ep.video}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" autoplay loop muted playsinline crossorigin="anonymous"></video>`
                     : `<img src="${ep.photo}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity">`;
@@ -501,6 +479,32 @@
                     </div>
                 `;
             });
+            container.innerHTML = html;
+        }
+
+        function renderBTS() {
+            const container = document.getElementById('bts-gallery');
+            let html = '';
+            
+            btsItems.forEach((item, index) => {
+                // Give each item a slight random rotation between -4 and 4 degrees for a scattered look
+                const randomRotation = (Math.random() * 8 - 4).toFixed(1);
+                
+                const mediaHTML = item.video 
+                    ? `<video src="${item.video}" class="w-full h-auto object-cover" autoplay loop muted playsinline crossorigin="anonymous"></video>`
+                    : `<img src="${item.photo}" class="w-full h-auto object-cover">`;
+
+                html += `
+                    <div class="bts-item inline-block w-full" style="transform: rotate(${randomRotation}deg);" onclick="openModal('bts', ${index})">
+                        ${mediaHTML}
+                        <div class="mt-4 px-2 pb-2">
+                            <h3 class="font-bold text-white text-lg">${item.title}</h3>
+                            <p class="text-gray-400 text-sm mt-1">${item.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            
             container.innerHTML = html;
         }
 
@@ -543,11 +547,15 @@
 
             if (type === 'top10') {
                 item = top10Items[index1];
-                desc = "One of the most iconic moments in Harshit's memories."; // Default desc for top 10
+                desc = "One of the most iconic moments in Harshit's memories."; 
             } else if (type === 'season') {
                 item = seasons[index1].episodes[index2];
                 duration = item.duration || "Special Feature";
                 desc = item.desc || "";
+            } else if (type === 'bts') {
+                item = btsItems[index1];
+                duration = "Behind the Scenes";
+                desc = item.desc || "Unseen footage!";
             }
 
             const mediaContainer = document.getElementById('modal-media-container');
@@ -590,6 +598,7 @@
         window.addEventListener('DOMContentLoaded', () => {
             renderTop10();
             renderSeasonSelect();
+            renderBTS();
         });
 
     </script>
