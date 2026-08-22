@@ -16,7 +16,7 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-        
+
         /* Hide scrollbar for Chrome, Safari and Opera */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -26,7 +26,7 @@
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
         }
-        
+
         .profile-card:hover .profile-img {
             border-color: white;
         }
@@ -34,7 +34,7 @@
             border: 2px solid transparent;
             transition: border-color 0.2s ease;
         }
-        
+
         .hero-gradient {
             background: linear-gradient(180deg, rgba(20,20,20,0) 0%, rgba(20,20,20,0.5) 60%, #141414 100%);
         }
@@ -61,7 +61,7 @@
             pointer-events: none;
             user-select: none;
         }
-        
+
         .top10-number {
             font-size: 140px;
             font-weight: 900;
@@ -75,7 +75,7 @@
             bottom: -15px;
             z-index: 0;
         }
-        
+
         .toast {
             transition: transform 0.3s ease, opacity 0.3s ease;
             transform: translateY(100%);
@@ -122,7 +122,7 @@
     </div>
 
     <div id="main-app" class="hidden opacity-0 transition-opacity duration-1000">
-        
+
         <!-- Navbar -->
         <header class="fixed top-0 w-full z-40 transition-colors duration-300 bg-gradient-to-b from-black/80 to-transparent px-4 md:px-12 py-4 flex items-center justify-between" id="navbar">
             <div class="flex items-center gap-8">
@@ -146,15 +146,15 @@
         <section class="relative h-[85vh] w-full bg-cover bg-center" style="background-image: url('https://cdn.discordapp.com/attachments/1540539997688701038/1540544944438120448/20250821_160507-EFFECTS.jpg?ex=6a8a57c8&is=6a890648&hm=f0514b6ed4c8dabf83e13e08da6dd85ea6762c883fd9d09c36541672d1190460&');">
             <div class="absolute inset-0 hero-vignette"></div>
             <div class="absolute inset-0 hero-gradient"></div>
-            
+
             <div class="absolute bottom-[25%] left-4 md:left-12 max-w-2xl z-10">
                 <div class="flex items-center gap-2 mb-4">
                     <img src="https://cdn.discordapp.com/attachments/1540539997688701038/1540545490213539871/IMG-20240609-WA0013.jpg?ex=6a8a584a&is=6a8906ca&hm=1cb6b39afaba8ba70fe5f761069b407c09cc68a4d20af503637dea34e5df2b74&" alt="N" class="w-8 h-8">
                     <span class="tracking-[0.3em] text-gray-300 text-xs font-bold shadow-md">RAKHI ORIGINAL</span>
                 </div>
-                
+
                 <h1 class="text-5xl md:text-7xl font-black mb-4 drop-shadow-xl tracking-tight leading-none">Harshit & <br/>Yukti</h1>
-                
+
                 <div class="flex items-center gap-4 text-sm font-semibold mb-4 drop-shadow-md">
                     <span class="text-green-500">100% Match</span>
                     <span>2026</span>
@@ -162,11 +162,11 @@
                     <span>6 Seasons</span>
                     <span class="text-xs px-2 py-0.5 bg-zinc-800 rounded">HD</span>
                 </div>
-                
+
                 <p class="text-white text-base md:text-lg mb-6 drop-shadow-md max-w-xl line-clamp-3">
                     A slow-burn sibling saga featuring intense negotiations over sleep, shared trauma from CUET, lost bets, and a stuffed bear named Lilo who threatens everyone.
                 </p>
-                
+
                 <div class="flex gap-3">
                     <button onclick="playStory()" class="bg-white text-black px-6 py-2 rounded font-bold text-lg hover:bg-white/80 transition-colors flex items-center gap-2">
                         <span>▶</span> Play Our Story
@@ -180,7 +180,7 @@
 
         <!-- Main Content -->
         <main class="relative z-20 -mt-20 pb-20">
-            
+
             <!-- Top 10 Row -->
             <div class="mb-10 px-4 md:px-12">
                 <h2 class="text-xl md:text-2xl font-bold mb-2 drop-shadow-md">Top 10 in Harshit's Memories Today</h2>
@@ -193,14 +193,14 @@
             <div id="episodes" class="px-4 md:px-12 pt-10">
                 <h2 class="text-2xl md:text-3xl font-bold mb-2">Episodes</h2>
                 <div class="text-gray-400 text-sm mb-6 max-w-3xl">Watch all the iconic moments. Every fight, every joke, and every time someone cried over DSE.</div>
-                
+
                 <!-- Season Buttons Array -->
                 <div id="season-selector-container" class="flex flex-wrap gap-2 md:gap-4 mb-6">
                     <!-- Populated by JS -->
                 </div>
 
                 <h3 id="current-season-title" class="text-xl font-bold mb-4 text-white"></h3>
-                
+
                 <div class="flex flex-col gap-4" id="episode-list">
                     <!-- Populated by JS -->
                 </div>
@@ -237,7 +237,7 @@
             <div id="bts" class="mt-24 px-4 md:px-12">
                 <h2 class="text-2xl md:text-3xl font-bold mb-2 drop-shadow-md">Behind the Scenes</h2>
                 <div class="text-gray-400 text-sm mb-8 max-w-3xl">Unseen footage, random bloopers, and moments that didn't make the final cut. Click to expand.</div>
-                
+
                 <div class="columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6" id="bts-gallery">
                     <!-- Populated by JS -->
                 </div>
@@ -258,7 +258,7 @@
                     </p>
                 </div>
             </div>
-            
+
         </main>
 
         <footer class="text-center py-8 text-gray-500 text-sm border-t border-zinc-900 bg-black mt-10">
@@ -292,7 +292,7 @@
 
     <script>
         // --- DATA ---
-        
+
         const top10Items = [
             { title: "Maths exam ka trauma jo abhi aapko bhi milega :)", photo: "https://i.pinimg.com/736x/2d/ff/6b/2dff6b0f754554f0dbcf7016b132213a.jpg" },
             { title: "Hairstyle day pe poore college ke saamne barber", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540541418898989116/VID-20241109-WA0061.mp4?ex=6a8a5480&is=6a890300&hm=faa2c2927d8cf49c60e6aef379913bb47a1190248fae662f82b276cd1ffd1810&" },
@@ -369,46 +369,65 @@
             }
         ];
 
-        // Massively Expanded Random Items for the BTS Gallery
+        // Randomized BTS Gallery with the new provided links
         const btsItems = [
-            { title: "Caught Sleeping Again", photo: "https://i.pinimg.com/736x/b7/c3/c8/b7c3c807310b120d1865259e8e1b8351.jpg", desc: "Not even 5 minutes into the movie." },
-            { title: "Lilo's Revenge", photo: "https://i.pinimg.com/736x/8f/7c/17/8f7c17dbab155d05c0caa93f65bb2f1b.jpg", desc: "When the bear gets angry." },
-            { title: "Dancing Blooper", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540541418898989116/VID-20241109-WA0061.mp4?ex=6a8a5480&is=6a890300&hm=faa2c2927d8cf49c60e6aef379913bb47a1190248fae662f82b276cd1ffd1810&", desc: "We don't talk about this one." },
-            { title: "Post-Exam Delirium", photo: "https://i.pinimg.com/736x/2d/ff/6b/2dff6b0f754554f0dbcf7016b132213a.jpg", desc: "CUET fries the brain." },
-            { title: "The Swiggy Delivery Arrives", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540544395399397516/20251128_065827.jpg?ex=6a8a5745&is=6a8905c5&hm=019ceab33730a9470745de98445e0e95c70a7ce559c45938d5224bbea3d2fca5&", desc: "True happiness caught on camera." },
-            { title: "Leg Broken but Spirits High", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540542146787156139/Snapchat-54643231.mp4?ex=6a8a552d&is=6a8903ad&hm=6bcd315506fff3b126ecc556a45ab20d63bdda4e0f225a7386f89203a65a4cd0&", desc: "Taking care of the giant." },
-            { title: "Stolen Hoodie", photo: "https://i.pinimg.com/736x/e0/45/12/e04512de41f56dee77c3d7b174ff184b.jpg", desc: "Yes, I know you took it." },
-            { title: "Paratha Run", photo: "https://i.pinimg.com/736x/89/16/5c/89165cacb22a2ee5e51b80d6c128bb49.jpg", desc: "Emergency food delivery service." },
-            { title: "Unexpected Guest", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540543099875496036/20250810_195621.jpg?ex=6a8a5610&is=6a890490&hm=c66150a5559ff9d6205af71ea0438cecb77f0833be58869407a18ba94908a734&", desc: "Bugs everywhere." },
-            { title: "Staircase Champion", photo: "https://i.pinimg.com/736x/31/d8/35/31d835a498c4a0f86bfe8806fb65b7a4.jpg", desc: "Floor 20 conquered." },
-            { title: "Birthday Surprise Prep", photo: "https://i.pinimg.com/736x/52/25/26/52252688f85239dcd1f4fe9bfe0f835c.jpg", desc: "He already knew." },
-            { title: "The Ultimate Betrayal", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552859374846012/VID-20250928-WA0003.mp4?ex=6a8a5f27&is=6a890da7&hm=6e934933446c3be1487aaf20e9e492dd35a6a51d4b4a235de3142a9943b9d39c&", desc: "Eating the last slice of pizza." },
-            { title: "DSE Walk of Shame", photo: "https://i.pinimg.com/736x/89/16/5c/89165cacb22a2ee5e51b80d6c128bb49.jpg", desc: "When the mock interview goes terribly wrong." },
-            { title: "Late Night Maggi", photo: "https://i.pinimg.com/736x/31/d8/35/31d835a498c4a0f86bfe8806fb65b7a4.jpg", desc: "Fueling the 3 AM study sessions for Economics." },
-            { title: "Bhaiya's Wisdom", photo: "https://i.pinimg.com/736x/8f/7c/17/8f7c17dbab155d05c0caa93f65bb2f1b.jpg", desc: "Giving completely unprompted life advice." },
-            { title: "Elevated Living Duty", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540547198373339226/IMG-20240808-WA0006.jpg?ex=6a8a59e2&is=6a890862&hm=c33d2eec510a12af98777e949cac6f1d5fb0796b854acfdfd1a7ad55b333bef2&", desc: "When the business actually requires some work." },
-            { title: "The Lilo Stash", photo: "https://i.pinimg.com/736x/b7/c3/c8/b7c3c807310b120d1865259e8e1b8351.jpg", desc: "Where the bear hides all the secret snacks." },
-            { title: "Gym Selfies", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552644039409774/Screenshot_20250923_184526_WhatsApp.jpg?ex=6a8a5ef4&is=6a890d74&hm=464182c9691e3a9d18163a7bea3d7edb0e46e31dd383ff1f88b549fd49d5e063&", desc: "Proof of the 99kg grind. Dumbbells included." },
-            { title: "Omaxe Mall Outing", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540549238692515861/VID-20240729-WA0002.mp4?ex=6a8a5bc8&is=6a890a48&hm=aa6ac9498f283b058e8a1e46242e1ca18ce01061a12bd6906629431475508032&", desc: "Wandering around trying to find some good food." },
-            { title: "Another Swiggy Bag", photo: "https://i.pinimg.com/736x/52/25/26/52252688f85239dcd1f4fe9bfe0f835c.jpg", desc: "It literally never ends." },
-            { title: "The Famous Burger", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540551635942514718/IMG-20241103-WA0085.jpg?ex=6a8a5e04&is=6a890c84&hm=e5ca3963cc5edb20eeec34954518ccc4ed91e563e29691dd3a4ff923e884ff28&", desc: "Homemade goodness before it was devoured." },
-            { title: "Code Red", photo: "https://i.pinimg.com/736x/e0/45/12/e04512de41f56dee77c3d7b174ff184b.jpg", desc: "When the Python script finally compiles without errors." },
-            { title: "Suiting Up", photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540545490213539871/IMG-20240609-WA0013.jpg?ex=6a8a584a&is=6a8906ca&hm=1cb6b39afaba8ba70fe5f761069b407c09cc68a4d20af503637dea34e5df2b74&", desc: "Getting corporate ready for the FICCI internship." },
-            { title: "The Sleep Deprived Smile", video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540547946997743637/VID-20240821-WA0022.mp4?ex=6a8a5a94&is=6a890914&hm=4f6c37cff2338d983f7db7ffcc7bb89da5fa891ca2e7ba3b5e80c041cced3f65&", desc: "Running purely on 4 hours of sleep and spite." }
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540589066276438096/Screenshot_2026-07-19_at_12.58.38_PM.png?ex=6a8a80e0&is=6a892f60&hm=108932823df84df5e4ffeefd738e7e6b40bae683f4bac9b95153b3c26473c093&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540590783143608360/20260606_145236.mp4?ex=6a8a8279&is=6a8930f9&hm=568a0a551d6c2be0fa270c5ce82e280dd44be6e57ef58f447815aabef11634dd&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588929206718474/lensbooth-strip-1787242235106.jpg?ex=6a8a80bf&is=6a892f3f&hm=0351338a8726599c5a602ce3e4bab3974c67fb9eb343e148c9cb7c0864680f99&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588815079579722/20260124_190610.jpg?ex=6a8a80a4&is=6a892f24&hm=0c148014199dde9df38e93f6059314cb66ad16a86f34e2d8f2de2754f827bca0&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540590701367005295/20260606_1356422.mp4?ex=6a8a8265&is=6a8930e5&hm=bdb30aec9fad16c1dc5d59327940bc49bcc1839661c9e3550fddaea7444ec8f2&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588749438722139/20251128_010428.jpg?ex=6a8a8094&is=6a892f14&hm=b62a1898f2620057e10181de066d028507ebd6cb4a10c188ab6bed2ada327771&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540590206506373141/20251023_121920_1.mp4?ex=6a8a81f0&is=6a893070&hm=cfa44af11b2a326db24524d000c8a729ed19510965d2259b74f7222c7dc7b27c&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588704857329674/20251128_001916.jpg?ex=6a8a8089&is=6a892f09&hm=aebfb59d779bfaa66c1392edfc25185851bbcde58febf9187aa528aad0a636d5&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588507368661092/Screenshot_2026-08-22_at_10.38.32_AM.png?ex=6a8a805a&is=6a892eda&hm=9acfc17047cae3fb6ebf9c36a75c501f5bc3991ca2cb1ed5a5ee27b42bdfac80&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540589885642117140/20250821_162058.mp4?ex=6a8a81a3&is=6a893023&hm=0df586a26ab5be7bb5533ede7cd606ad27e99cd14d52dac3717817e8c3e34fe9&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588282134528171/IMG-20250623-WA00151.jpg?ex=6a8a8025&is=6a892ea5&hm=a8e92587bab01939d7b226ddce77bdd1bcd6d983d4cac55c675edccf4126122e&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540589782709837845/20250809_184210.mp4?ex=6a8a818a&is=6a89300a&hm=0ddedc4b198e6a8b9a6ce05efcdc32cc6ad2653419910668bf88939b577c2407&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588232293621760/IMG-20241109-WA0060_1.jpg?ex=6a8a8019&is=6a892e99&hm=16604d13a1b22b2ccbb71b8ce0f6064fdbda1fe96b1083c37e5dce1a13f94429&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588148965507092/20250809_200122.jpg?ex=6a8a8005&is=6a892e85&hm=67e9f0962efa6e30c0f56d6056f0a1c8c859ccff1824ff597b936818c4e5ef2c&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540589236867043408/VID_20260606_050045_534.mp4?ex=6a8a8108&is=6a892f88&hm=9a9725d2a9bd4eccd12b79de8f7a1c65bc871596701703f3c0dd6ecfa3de6b66&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588074323550258/20250727_172104.jpg?ex=6a8a7ff3&is=6a892e73&hm=d4b1424d6b60381ab84d1ebd936d67e51f2e0ab9dbc292bc2400e46c7f317235&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540589136979820544/Snapchat-209533510.mp4?ex=6a8a80f1&is=6a892f71&hm=f7a02a1c2c18ef7fbac45ff80273577d41a0246a1dc880f092c493290567e8cc&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588112311357602/20250809_173427.jpg?ex=6a8a7ffc&is=6a892e7c&hm=0de34ed2e10684310e05fb7ca06699ab1ec0c909116f8cfb8be681f7a8267439&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588043709321316/20250702_123057_2.jpg?ex=6a8a7fec&is=6a892e6c&hm=c5d18c2f6bf43da47c5588222e86db4d2159a37c7cbcd5e55f6252117c87dea7&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588403782062130/Snapchat-2061273257.mp4?ex=6a8a8042&is=6a892ec2&hm=125bba6a03aad1ee927f9509c59143f91ef44623dc87187b7f8ea040d49acde7&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540588013426315324/20250623_182443.jpg?ex=6a8a7fe5&is=6a892e65&hm=22c9193d2a445928e3d3fc59682d0a337bdea65f9757c8dc4c18505cf4c22e6c&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540587983718191244/20250402_165926.jpg?ex=6a8a7fde&is=6a892e5e&hm=81a5d6054ba76b3ae592b9463d1622d2b3bf04145b9e74b97a110bdd4fce7e3d&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540581503673569341/VID-20260727-WA0013.mp4?ex=6a8a79d5&is=6a892855&hm=5b862a0f6d6c25f6bbe61eb13ef383b96783f6816a5f0e336d703fe096c5ab2d&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540580962117619712/20250912_170210.jpg?ex=6a8a7953&is=6a8927d3&hm=ecd30286ec241711a0f488553515a0ebabfdb84c1eb510bed1af384cbc8de114&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540559096548433931/Snapchat-1331249473.mp4?ex=6a8a64f6&is=6a891376&hm=06cd01fdce34d8109e0e655556ec3cd3b1acded27771220e040741526bfedf54&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540557967517028382/20250809_200054.jpg?ex=6a8a63e9&is=6a891269&hm=f2c005a283f805b61eb9bc2af9a972bc56c3b1513612636783480de26dbf24f8&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540551635942514718/IMG-20241103-WA0085.jpg?ex=6a8a5e04&is=6a890c84&hm=e5ca3963cc5edb20eeec34954518ccc4ed91e563e29691dd3a4ff923e884ff28&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540558912745377862/Snapchat-693697065.mp4?ex=6a8a64ca&is=6a89134a&hm=6f0c6ea142e2884413b1959533f87f0972b9f42c8ca8a8c958183c2e05b6cff1&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540552374295461978/IMG-20250428-WA0027.jpg?ex=6a8a5eb4&is=6a890d34&hm=9901d162eaeac9c3ea1808387e61cc8cdf18273a7eff2a334ace6397ed758add&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540550049069797407/20241024_171755.jpg?ex=6a8a5c89&is=6a890b09&hm=8e166b7089109f7f69d50d6636e6bdfdc48ea3f11270ccc71e4b2ee1c0d30f49&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540558810039459971/Snapchat-119928723.mp4?ex=6a8a64b2&is=6a891332&hm=6cf05afa403ec6070f527df27cf948f0078bacd0c4957d46ee2fe9da0f345f83&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540544944438120448/20250821_160507-EFFECTS.jpg?ex=6a8a57c8&is=6a890648&hm=f0514b6ed4c8dabf83e13e08da6dd85ea6762c883fd9d09c36541672d1190460&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540544395399397516/20251128_065827.jpg?ex=6a8a5745&is=6a8905c5&hm=019ceab33730a9470745de98445e0e95c70a7ce559c45938d5224bbea3d2fca5&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540550216204419122/VID-20241109-WA0057.mp4?ex=6a8a5cb1&is=6a890b31&hm=ab03213ea6d9c92066ec91c38e83f68694e32d669ffb99f199f4d229daa7812d&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540593694892367872/20260422_123954.jpg?ex=6a8a852f&is=6a8933af&hm=01a3f7d866fc6263db1482b314abdada450dd9f64a5f61e3b5751b16001f0ccc&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540593695588487229/20260429_185744.jpg?ex=6a8a852f&is=6a8933af&hm=97bb06addf31aa7a257ef8357e126ed76753c98bad936daceac4114eb9120b28&" },
+            { video: "https://cdn.discordapp.com/attachments/1540539997688701038/1540544718822318120/VID-20260727-WA0013.mp4?ex=6a8a5792&is=6a890612&hm=52baf45bab5dd774ff4c8c1f6e06044f287c6435f88da5951ebd4eff913618ef&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540593696335069205/20260628_142900.jpg?ex=6a8a8530&is=6a8933b0&hm=af4e6687c0cfcf5076dd6a0924660c72e4db4478ffabbfe0ed430cebfa4033b0&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540593697081663568/20260726_193258.jpg?ex=6a8a8530&is=6a8933b0&hm=e4ce03d7a4b9913fdb787cf5bdeaa3e88b6413e9207adb6f8b620504ad83de2e&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540593699803635802/IMG-20260124-WA0041-ANIMATION.gif?ex=6a8a8530&is=6a8933b0&hm=a02358804673a18a79f55ac81e556f63a42229b647fb74bfbb073683430ce088&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540594268530286592/Screenshot_2026-08-22_at_11.01.28_AM.png?ex=6a8a85b8&is=6a893438&hm=7eaf4a73551dd7264abdecccf835cacf97e31951e2bd0ed2a13e5c0b9ba667de&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540594205808926780/Screenshot_2026-08-22_at_11.01.13_AM.png?ex=6a8a85a9&is=6a893429&hm=b183d612ac7bf223b7fd866e9b42aae0ec1f8067e6e2c2f236f6195eaecfb58c&" },
+            { photo: "https://cdn.discordapp.com/attachments/1540539997688701038/1540594136917221406/Screenshot_2026-08-22_at_11.00.56_AM.png?ex=6a8a8599&is=6a893419&hm=eee6ba83f4ddc25f68e9e7f4591b19510657dfcd482bc087c779a41587675d1b&" }
         ];
 
         // --- LOGIC ---
-        
+
         function enterApp(profileName) {
             document.getElementById('profile-screen').style.opacity = '0';
             setTimeout(() => {
                 document.getElementById('profile-screen').style.display = 'none';
                 document.getElementById('main-app').classList.remove('hidden');
-                
+
                 // Trigger reflow
                 void document.getElementById('main-app').offsetWidth;
                 document.getElementById('main-app').style.opacity = '1';
-                
+
                 // Set avatar based on selection
                 const color = profileName === 'Harshit' ? 'e50914' : '0071eb';
                 document.getElementById('active-profile-img').src = `https://api.dicebear.com/7.x/avataaars/svg?seed=${profileName}&backgroundColor=${color}`;
@@ -430,7 +449,7 @@
         function renderTop10() {
             const container = document.getElementById('top10-container');
             let html = '';
-            
+
             top10Items.forEach((item, index) => {
                 const mediaHTML = item.video 
                     ? `<video src="${item.video}" class="w-full h-[140px] object-cover opacity-80 group-hover:opacity-100 transition-opacity" autoplay loop muted playsinline crossorigin="anonymous"></video>`
@@ -456,7 +475,6 @@
             const container = document.getElementById('season-selector-container');
             let html = '';
             seasons.forEach((s, index) => {
-                // Shorten to "Season 1", "Season 2" etc. for the horizontal buttons
                 const shortName = s.title.split(':')[0];
                 html += `<button id="season-btn-${index}" onclick="renderSeason(${index})" class="whitespace-nowrap px-4 py-2 rounded font-semibold text-sm md:text-base border transition-colors ${index === 0 ? 'bg-white text-black border-white' : 'bg-zinc-800 text-white border-zinc-600 hover:bg-zinc-700'}">${shortName}</button>`;
             });
@@ -486,7 +504,7 @@
             const container = document.getElementById('episode-list');
             const season = seasons[index];
             let html = '';
-            
+
             season.episodes.forEach((ep, epIndex) => {
                 const mediaHTML = ep.video 
                     ? `<video src="${ep.video}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" autoplay loop muted playsinline crossorigin="anonymous"></video>`
@@ -519,11 +537,11 @@
         function renderBTS() {
             const container = document.getElementById('bts-gallery');
             let html = '';
-            
+
             btsItems.forEach((item, index) => {
                 // Give each item a slight random rotation between -5 and 5 degrees for a scattered look
                 const randomRotation = (Math.random() * 10 - 5).toFixed(1);
-                
+
                 const mediaHTML = item.video 
                     ? `<video src="${item.video}" class="w-full h-auto object-cover" autoplay loop muted playsinline crossorigin="anonymous"></video>`
                     : `<img src="${item.photo}" class="w-full h-auto object-cover">`;
@@ -531,14 +549,10 @@
                 html += `
                     <div class="bts-item inline-block w-full" style="transform: rotate(${randomRotation}deg);" onclick="openModal('bts', ${index})">
                         ${mediaHTML}
-                        <div class="mt-4 px-2 pb-2">
-                            <h3 class="font-bold text-white text-lg">${item.title}</h3>
-                            <p class="text-gray-400 text-sm mt-1">${item.desc}</p>
-                        </div>
                     </div>
                 `;
             });
-            
+
             container.innerHTML = html;
         }
 
@@ -556,7 +570,7 @@
 
         function playStory() {
             scrollToEpisodes();
-            
+
             // Confetti effect
             const emojis = ['✨', '🎉', '❤️', '😂', '🥺', '🥪'];
             for (let i = 0; i < 50; i++) {
@@ -567,7 +581,7 @@
                     confetti.style.left = Math.random() * 100 + 'vw';
                     confetti.style.animation = `fall ${Math.random() * 2 + 2}s linear forwards`;
                     document.body.appendChild(confetti);
-                    
+
                     // Cleanup
                     setTimeout(() => confetti.remove(), 4000);
                 }, Math.random() * 1000);
@@ -589,11 +603,11 @@
             } else if (type === 'bts') {
                 item = btsItems[index1];
                 duration = "Behind the Scenes";
-                desc = item.desc || "Unseen footage!";
+                desc = "";
             }
 
             const mediaContainer = document.getElementById('modal-media-container');
-            
+
             // Displays Discord video with player controls OR Pinterest Image
             if (item.video) {
                 mediaContainer.innerHTML = `<video src="${item.video}" class="w-full h-full object-contain bg-black" controls autoplay playsinline crossorigin="anonymous"></video>`;
@@ -601,13 +615,14 @@
                 mediaContainer.innerHTML = `<img src="${item.photo}" class="w-full h-full object-contain bg-black">`;
             }
 
-            document.getElementById('modal-title').innerText = item.title;
+            // In BTS, titles might be undefined since they are removed, provide a fallback.
+            document.getElementById('modal-title').innerText = item.title || 'Behind the Scenes';
             document.getElementById('modal-duration').innerText = duration;
             document.getElementById('modal-desc').innerText = desc;
 
             const modal = document.getElementById('media-modal');
             const modalContent = document.getElementById('media-modal-content');
-            
+
             modal.classList.remove('opacity-0', 'pointer-events-none');
             modalContent.classList.remove('scale-95');
             modalContent.classList.add('scale-100');
@@ -617,11 +632,11 @@
             const modal = document.getElementById('media-modal');
             const modalContent = document.getElementById('media-modal-content');
             const mediaContainer = document.getElementById('modal-media-container');
-            
+
             modal.classList.add('opacity-0', 'pointer-events-none');
             modalContent.classList.remove('scale-100');
             modalContent.classList.add('scale-95');
-            
+
             // Clear the media after the fade out transition finishes to stop any playing videos
             setTimeout(() => {
                 mediaContainer.innerHTML = ''; 
