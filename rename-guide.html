@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rename Guide — Rakshabandhan Site</title>
+<style>
+  :root {
+    --bg: #141414;
+    --card: #1c1c1e;
+    --border: #2c2c2e;
+    --red: #e50914;
+    --text: #f2f2f2;
+    --muted: #9a9a9c;
+    --green: #2ecc71;
+    --blue: #7ec8ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    padding: 32px 16px 80px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 28px; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.5px; }
+  h1 span { color: var(--red); }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; line-height: 1.5; }
+  .note {
+    background: #1e2a1e;
+    border: 1px solid #2e4a2e;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #b8e0b8;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .progress-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .progress-bar { flex: 1; height: 8px; background: #2c2c2e; border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--green); width: 0%; transition: width 0.3s ease; }
+  #progress-label { font-size: 13px; color: var(--muted); white-space: nowrap; font-weight: 600; }
+  .steps {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #d4d4d4;
+  }
+  .steps b { color: var(--text); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13.5px; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  .group-row td { background: #232326; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red); padding: 10px 12px; }
+  .mono { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; word-break: break-all; }
+  .target { color: var(--blue); font-weight: 600; }
+  .arrow { color: var(--muted); text-align: center; width: 24px; }
+  .checkcell { width: 30px; text-align: center; }
+  input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--green); cursor: pointer; }
+  .badge { display: inline-block; font-size: 11px; background: #2c2c2e; padding: 2px 8px; border-radius: 20px; color: var(--muted); margin-right: 6px; }
+  .reuse { display: inline-block; font-size: 11px; background: #3a2e12; color: #e0b84a; padding: 2px 8px; border-radius: 20px; }
+  .ctx { font-size: 11.5px; color: var(--muted); margin-top: 4px; max-width: 300px; line-height: 1.5; }
+  tr.done td { opacity: 0.35; }
+  tr.done .mono, tr.done .target { text-decoration: line-through; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>USFLIX <span>Rename Guide</span></h1>
+  <div class="sub">60 unique files need to be added to the <code>assets</code> folder to replace the expired Discord links. Check items off as you go, your progress is saved in this browser.</div>
+
+  <div class="note">
+    ℹ️ A few files show up more than once on the site (e.g. the same clip used in an episode <i>and</i> in Behind the Scenes). Those are marked "used in X spots" below, you only need to save the file <b>once</b> under the listed filename, it'll automatically appear everywhere it's needed.
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div id="progress-label">0 / 60 done</div>
+  </div>
+
+  <div class="steps">
+    <b>How to use this:</b><br>
+    1. Find the original file (its old filename is in the left column, might help you spot it in your gallery or Discord chat).<br>
+    2. Rename it to exactly match the <span style="color:var(--blue)">blue</span> filename in the middle column.<br>
+    3. Move it into the <code>assets</code> folder from the zip.<br>
+    4. Tick it off below once it's done.
+  </div>
+
+  <table><tbody>
+<tr class="group-row"><td colspan="5">Hero Section</td></tr>
+<tr data-id="row1">
+  <td class="checkcell"><input type="checkbox" id="chk1" onchange="toggleDone(1)"></td>
+  <td class="mono">20250821_160507-EFFECTS.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">hero-background.jpg</td>
+  <td><span class="badge">🖼️ photo</span><span class="reuse">used in 2 spots</span><div class="ctx">Hero banner (top background image)<br>Behind the Scenes - item #32</div></td>
+</tr>
+<tr data-id="row2">
+  <td class="checkcell"><input type="checkbox" id="chk2" onchange="toggleDone(2)"></td>
+  <td class="mono">IMG-20240609-WA0013.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">rakhi-badge.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Hero &quot;RAKHI ORIGINAL&quot; badge icon</div></td>
+</tr>
+<tr class="group-row"><td colspan="5">Top 10 in Memories</td></tr>
+<tr data-id="row3">
+  <td class="checkcell"><input type="checkbox" id="chk3" onchange="toggleDone(3)"></td>
+  <td class="mono">VID-20241109-WA0061.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">top10-02.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Top 10 in Memories - item #2 — &quot;Hairstyle day pe poore college ke saamne barber&quot;</div></td>
+</tr>
+<tr data-id="row4">
+  <td class="checkcell"><input type="checkbox" id="chk4" onchange="toggleDone(4)"></td>
+  <td class="mono">20251023_113454-ANIMATION.gif</td>
+  <td class="arrow">→</td>
+  <td class="mono target">top10-03.gif</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Top 10 in Memories - item #3 — &quot;Bhaidooj pe mujhe milne waala princess treatment&quot;</div></td>
+</tr>
+<tr data-id="row5">
+  <td class="checkcell"><input type="checkbox" id="chk5" onchange="toggleDone(5)"></td>
+  <td class="mono">20250810_195621.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">top10-07.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Top 10 in Memories - item #7 — &quot;The only reason aapko aur aapki harkatien jhelta hoon main&quot;</div></td>
+</tr>
+<tr data-id="row6">
+  <td class="checkcell"><input type="checkbox" id="chk6" onchange="toggleDone(6)"></td>
+  <td class="mono">Snapchat-54643231.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">top10-08.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Top 10 in Memories - item #8 — &quot;Pair tutne pe fu, aik ye wapas se karenge maze aaye the&quot;</div></td>
+</tr>
+<tr data-id="row7">
+  <td class="checkcell"><input type="checkbox" id="chk7" onchange="toggleDone(7)"></td>
+  <td class="mono">20251128_065827.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">top10-10.jpg</td>
+  <td><span class="badge">🖼️ photo</span><span class="reuse">used in 2 spots</span><div class="ctx">Top 10 in Memories - item #10 — &quot;Mera bed churaliya moti&quot;<br>Behind the Scenes - item #33</div></td>
+</tr>
+<tr class="group-row"><td colspan="5">Season 1</td></tr>
+<tr data-id="row8">
+  <td class="checkcell"><input type="checkbox" id="chk8" onchange="toggleDone(8)"></td>
+  <td class="mono">Snapchat-893395462.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season1-ep1.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Season 1: The Clash of Titans - Episode 1: &quot;The Annoyance&quot; — &quot;The Annoyance&quot;</div></td>
+</tr>
+<tr data-id="row9">
+  <td class="checkcell"><input type="checkbox" id="chk9" onchange="toggleDone(9)"></td>
+  <td class="mono">IMG_20240903_154709_1.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season1-ep2.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Season 1: The Clash of Titans - Episode 2: &quot;The Crossover&quot; — &quot;The Crossover&quot;</div></td>
+</tr>
+<tr data-id="row10">
+  <td class="checkcell"><input type="checkbox" id="chk10" onchange="toggleDone(10)"></td>
+  <td class="mono">IMG-20240808-WA0006.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season1-ep3.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Season 1: The Clash of Titans - Episode 3: &quot;The Trap&quot; — &quot;The Trap&quot;</div></td>
+</tr>
+<tr data-id="row11">
+  <td class="checkcell"><input type="checkbox" id="chk11" onchange="toggleDone(11)"></td>
+  <td class="mono">VID-20240821-WA0022.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season1-ep4.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Season 1: The Clash of Titans - Episode 4: &quot;Do or Die&quot; — &quot;Do or Die&quot;</div></td>
+</tr>
+<tr class="group-row"><td colspan="5">Season 2</td></tr>
+<tr data-id="row12">
+  <td class="checkcell"><input type="checkbox" id="chk12" onchange="toggleDone(12)"></td>
+  <td class="mono">VID-20240729-WA0002.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season2-ep1.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Season 2: The Plot Thickens - Episode 1: &quot;The First Birthday&quot; — &quot;The First Birthday&quot;</div></td>
+</tr>
+<tr data-id="row13">
+  <td class="checkcell"><input type="checkbox" id="chk13" onchange="toggleDone(13)"></td>
+  <td class="mono">20241024_171755.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season2-ep2.jpg</td>
+  <td><span class="badge">🖼️ photo</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 2: The Plot Thickens - Episode 2: &quot;The Bonding&quot; — &quot;The Bonding&quot;<br>Behind the Scenes - item #30</div></td>
+</tr>
+<tr data-id="row14">
+  <td class="checkcell"><input type="checkbox" id="chk14" onchange="toggleDone(14)"></td>
+  <td class="mono">VID-20241109-WA0057.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season2-ep3.mp4</td>
+  <td><span class="badge">🎬 video</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 2: The Plot Thickens - Episode 3: &quot;Baldie to Baddie?&quot; — &quot;Baldie to Baddie?&quot;<br>Behind the Scenes - item #34</div></td>
+</tr>
+<tr data-id="row15">
+  <td class="checkcell"><input type="checkbox" id="chk15" onchange="toggleDone(15)"></td>
+  <td class="mono">IMG-20241103-WA0085.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season2-ep4.jpg</td>
+  <td><span class="badge">🖼️ photo</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 2: The Plot Thickens - Episode 4: &quot;Malnutritioned Chipkali&quot; — &quot;Malnutritioned Chipkali&quot;<br>Behind the Scenes - item #27</div></td>
+</tr>
+<tr class="group-row"><td colspan="5">Season 3</td></tr>
+<tr data-id="row16">
+  <td class="checkcell"><input type="checkbox" id="chk16" onchange="toggleDone(16)"></td>
+  <td class="mono">IMG-20250428-WA0027.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season3-ep1.jpg</td>
+  <td><span class="badge">🖼️ photo</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 3: The Great Depression - Episode 1: &quot;The Giant&quot; — &quot;The Giant&quot;<br>Behind the Scenes - item #29</div></td>
+</tr>
+<tr data-id="row17">
+  <td class="checkcell"><input type="checkbox" id="chk17" onchange="toggleDone(17)"></td>
+  <td class="mono">Screenshot_20250923_184526_WhatsApp.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season3-ep2.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Season 3: The Great Depression - Episode 2: &quot;The Lizard&quot; — &quot;The Lizard&quot;</div></td>
+</tr>
+<tr data-id="row18">
+  <td class="checkcell"><input type="checkbox" id="chk18" onchange="toggleDone(18)"></td>
+  <td class="mono">Screenshot_20250810_130259_Instagram2.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season3-ep3.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Season 3: The Great Depression - Episode 3: &quot;Unbiological? Na, Soul Sister&quot; — &quot;Unbiological? Na, Soul Sister&quot;</div></td>
+</tr>
+<tr data-id="row19">
+  <td class="checkcell"><input type="checkbox" id="chk19" onchange="toggleDone(19)"></td>
+  <td class="mono">VID-20250928-WA0003.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season3-ep4.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Season 3: The Great Depression - Episode 4: &quot;Finale&quot; — &quot;Finale&quot;</div></td>
+</tr>
+<tr class="group-row"><td colspan="5">Season 4</td></tr>
+<tr data-id="row20">
+  <td class="checkcell"><input type="checkbox" id="chk20" onchange="toggleDone(20)"></td>
+  <td class="mono">20250809_200054.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season4-ep1.jpg</td>
+  <td><span class="badge">🖼️ photo</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 4: The DSE Era - Episode 1: &quot;Rakshabandhan Return&quot; — &quot;Rakshabandhan Return&quot;<br>Behind the Scenes - item #26</div></td>
+</tr>
+<tr data-id="row21">
+  <td class="checkcell"><input type="checkbox" id="chk21" onchange="toggleDone(21)"></td>
+  <td class="mono">Snapchat-119928723.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season4-ep2.mp4</td>
+  <td><span class="badge">🎬 video</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 4: The DSE Era - Episode 2: &quot;No Internship?&quot; — &quot;No Internship?&quot;<br>Behind the Scenes - item #31</div></td>
+</tr>
+<tr data-id="row22">
+  <td class="checkcell"><input type="checkbox" id="chk22" onchange="toggleDone(22)"></td>
+  <td class="mono">Snapchat-693697065.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season4-ep3.mp4</td>
+  <td><span class="badge">🎬 video</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 4: The DSE Era - Episode 3: &quot;The Slap Heard around the world&quot; — &quot;The Slap Heard around the world&quot;<br>Behind the Scenes - item #28</div></td>
+</tr>
+<tr data-id="row23">
+  <td class="checkcell"><input type="checkbox" id="chk23" onchange="toggleDone(23)"></td>
+  <td class="mono">Snapchat-1331249473.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season4-ep4.mp4</td>
+  <td><span class="badge">🎬 video</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 4: The DSE Era - Episode 4: &quot;The idiot strikes back???&quot; — &quot;The idiot strikes back???&quot;<br>Behind the Scenes - item #25</div></td>
+</tr>
+<tr class="group-row"><td colspan="5">Season 5</td></tr>
+<tr data-id="row24">
+  <td class="checkcell"><input type="checkbox" id="chk24" onchange="toggleDone(24)"></td>
+  <td class="mono">IMG-20250821-WA0005.jpeg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season5-ep1.jpeg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Season 5: Family Shenanigans - Episode 1: &quot;The Enslavement&quot; — &quot;The Enslavement&quot;</div></td>
+</tr>
+<tr data-id="row25">
+  <td class="checkcell"><input type="checkbox" id="chk25" onchange="toggleDone(25)"></td>
+  <td class="mono">20250912_170210.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season5-ep2.jpg</td>
+  <td><span class="badge">🖼️ photo</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 5: Family Shenanigans - Episode 2: &quot;The Catastrophe&quot; — &quot;The Catastrophe&quot;<br>Behind the Scenes - item #24</div></td>
+</tr>
+<tr data-id="row26">
+  <td class="checkcell"><input type="checkbox" id="chk26" onchange="toggleDone(26)"></td>
+  <td class="mono">IMG-20251214-WA0021.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season5-ep3.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Season 5: Family Shenanigans - Episode 3: &quot;The Problem&quot; — &quot;The Problem&quot;</div></td>
+</tr>
+<tr data-id="row27">
+  <td class="checkcell"><input type="checkbox" id="chk27" onchange="toggleDone(27)"></td>
+  <td class="mono">20251023_120833.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season5-ep4.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Season 5: Family Shenanigans - Episode 4: &quot;Peace Offering&quot; — &quot;Peace Offering&quot;</div></td>
+</tr>
+<tr class="group-row"><td colspan="5">Season 6</td></tr>
+<tr data-id="row28">
+  <td class="checkcell"><input type="checkbox" id="chk28" onchange="toggleDone(28)"></td>
+  <td class="mono">VID-20260616-WA00013.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season6-ep1.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Season 6: The Uncharted Future - Episode 1: &quot;THE VICTORY&quot; — &quot;THE VICTORY&quot;</div></td>
+</tr>
+<tr data-id="row29">
+  <td class="checkcell"><input type="checkbox" id="chk29" onchange="toggleDone(29)"></td>
+  <td class="mono">VID_20260606_050045_534.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season6-ep2.mp4</td>
+  <td><span class="badge">🎬 video</span><span class="reuse">used in 2 spots</span><div class="ctx">Season 6: The Uncharted Future - Episode 2: &quot;PARTY ALL NIGHT&quot; — &quot;PARTY ALL NIGHT&quot;<br>Behind the Scenes - item #15</div></td>
+</tr>
+<tr data-id="row30">
+  <td class="checkcell"><input type="checkbox" id="chk30" onchange="toggleDone(30)"></td>
+  <td class="mono">IMG-20260728-WA02191.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season6-ep3.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Season 6: The Uncharted Future - Episode 3: &quot;Bhabha and Jijis&quot; — &quot;Bhabha and Jijis&quot;</div></td>
+</tr>
+<tr data-id="row31">
+  <td class="checkcell"><input type="checkbox" id="chk31" onchange="toggleDone(31)"></td>
+  <td class="mono">VID-20260727-WA0013.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">season6-ep4.mp4</td>
+  <td><span class="badge">🎬 video</span><span class="reuse">used in 3 spots</span><div class="ctx">Season 6: The Uncharted Future - Episode 4: &quot;Always Penny &amp; Sheldon&quot; — &quot;Always Penny &amp; Sheldon&quot;<br>Behind the Scenes - item #23<br>Behind the Scenes - item #37</div></td>
+</tr>
+<tr class="group-row"><td colspan="5">Behind the Scenes</td></tr>
+<tr data-id="row32">
+  <td class="checkcell"><input type="checkbox" id="chk32" onchange="toggleDone(32)"></td>
+  <td class="mono">Screenshot_2026-07-19_at_12.58.38_PM.png</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-01.png</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #1</div></td>
+</tr>
+<tr data-id="row33">
+  <td class="checkcell"><input type="checkbox" id="chk33" onchange="toggleDone(33)"></td>
+  <td class="mono">20260606_145236.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-02.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Behind the Scenes - item #2</div></td>
+</tr>
+<tr data-id="row34">
+  <td class="checkcell"><input type="checkbox" id="chk34" onchange="toggleDone(34)"></td>
+  <td class="mono">lensbooth-strip-1787242235106.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-03.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #3</div></td>
+</tr>
+<tr data-id="row35">
+  <td class="checkcell"><input type="checkbox" id="chk35" onchange="toggleDone(35)"></td>
+  <td class="mono">20260124_190610.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-04.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #4</div></td>
+</tr>
+<tr data-id="row36">
+  <td class="checkcell"><input type="checkbox" id="chk36" onchange="toggleDone(36)"></td>
+  <td class="mono">20260606_1356422.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-05.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Behind the Scenes - item #5</div></td>
+</tr>
+<tr data-id="row37">
+  <td class="checkcell"><input type="checkbox" id="chk37" onchange="toggleDone(37)"></td>
+  <td class="mono">20251128_010428.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-06.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #6</div></td>
+</tr>
+<tr data-id="row38">
+  <td class="checkcell"><input type="checkbox" id="chk38" onchange="toggleDone(38)"></td>
+  <td class="mono">20251023_121920_1.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-07.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Behind the Scenes - item #7</div></td>
+</tr>
+<tr data-id="row39">
+  <td class="checkcell"><input type="checkbox" id="chk39" onchange="toggleDone(39)"></td>
+  <td class="mono">20251128_001916.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-08.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #8</div></td>
+</tr>
+<tr data-id="row40">
+  <td class="checkcell"><input type="checkbox" id="chk40" onchange="toggleDone(40)"></td>
+  <td class="mono">Screenshot_2026-08-22_at_10.38.32_AM.png</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-09.png</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #9</div></td>
+</tr>
+<tr data-id="row41">
+  <td class="checkcell"><input type="checkbox" id="chk41" onchange="toggleDone(41)"></td>
+  <td class="mono">20250821_162058.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-10.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Behind the Scenes - item #10</div></td>
+</tr>
+<tr data-id="row42">
+  <td class="checkcell"><input type="checkbox" id="chk42" onchange="toggleDone(42)"></td>
+  <td class="mono">IMG-20250623-WA00151.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-11.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #11</div></td>
+</tr>
+<tr data-id="row43">
+  <td class="checkcell"><input type="checkbox" id="chk43" onchange="toggleDone(43)"></td>
+  <td class="mono">20250809_184210.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-12.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Behind the Scenes - item #12</div></td>
+</tr>
+<tr data-id="row44">
+  <td class="checkcell"><input type="checkbox" id="chk44" onchange="toggleDone(44)"></td>
+  <td class="mono">IMG-20241109-WA0060_1.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-13.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #13</div></td>
+</tr>
+<tr data-id="row45">
+  <td class="checkcell"><input type="checkbox" id="chk45" onchange="toggleDone(45)"></td>
+  <td class="mono">20250809_200122.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-14.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #14</div></td>
+</tr>
+<tr data-id="row46">
+  <td class="checkcell"><input type="checkbox" id="chk46" onchange="toggleDone(46)"></td>
+  <td class="mono">20250727_172104.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-16.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #16</div></td>
+</tr>
+<tr data-id="row47">
+  <td class="checkcell"><input type="checkbox" id="chk47" onchange="toggleDone(47)"></td>
+  <td class="mono">Snapchat-209533510.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-17.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Behind the Scenes - item #17</div></td>
+</tr>
+<tr data-id="row48">
+  <td class="checkcell"><input type="checkbox" id="chk48" onchange="toggleDone(48)"></td>
+  <td class="mono">20250809_173427.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-18.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #18</div></td>
+</tr>
+<tr data-id="row49">
+  <td class="checkcell"><input type="checkbox" id="chk49" onchange="toggleDone(49)"></td>
+  <td class="mono">20250702_123057_2.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-19.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #19</div></td>
+</tr>
+<tr data-id="row50">
+  <td class="checkcell"><input type="checkbox" id="chk50" onchange="toggleDone(50)"></td>
+  <td class="mono">Snapchat-2061273257.mp4</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-20.mp4</td>
+  <td><span class="badge">🎬 video</span><div class="ctx">Behind the Scenes - item #20</div></td>
+</tr>
+<tr data-id="row51">
+  <td class="checkcell"><input type="checkbox" id="chk51" onchange="toggleDone(51)"></td>
+  <td class="mono">20250623_182443.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-21.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #21</div></td>
+</tr>
+<tr data-id="row52">
+  <td class="checkcell"><input type="checkbox" id="chk52" onchange="toggleDone(52)"></td>
+  <td class="mono">20250402_165926.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-22.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #22</div></td>
+</tr>
+<tr data-id="row53">
+  <td class="checkcell"><input type="checkbox" id="chk53" onchange="toggleDone(53)"></td>
+  <td class="mono">20260422_123954.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-35.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #35</div></td>
+</tr>
+<tr data-id="row54">
+  <td class="checkcell"><input type="checkbox" id="chk54" onchange="toggleDone(54)"></td>
+  <td class="mono">20260429_185744.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-36.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #36</div></td>
+</tr>
+<tr data-id="row55">
+  <td class="checkcell"><input type="checkbox" id="chk55" onchange="toggleDone(55)"></td>
+  <td class="mono">20260628_142900.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-38.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #38</div></td>
+</tr>
+<tr data-id="row56">
+  <td class="checkcell"><input type="checkbox" id="chk56" onchange="toggleDone(56)"></td>
+  <td class="mono">20260726_193258.jpg</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-39.jpg</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #39</div></td>
+</tr>
+<tr data-id="row57">
+  <td class="checkcell"><input type="checkbox" id="chk57" onchange="toggleDone(57)"></td>
+  <td class="mono">IMG-20260124-WA0041-ANIMATION.gif</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-40.gif</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #40</div></td>
+</tr>
+<tr data-id="row58">
+  <td class="checkcell"><input type="checkbox" id="chk58" onchange="toggleDone(58)"></td>
+  <td class="mono">Screenshot_2026-08-22_at_11.01.28_AM.png</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-41.png</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #41</div></td>
+</tr>
+<tr data-id="row59">
+  <td class="checkcell"><input type="checkbox" id="chk59" onchange="toggleDone(59)"></td>
+  <td class="mono">Screenshot_2026-08-22_at_11.01.13_AM.png</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-42.png</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #42</div></td>
+</tr>
+<tr data-id="row60">
+  <td class="checkcell"><input type="checkbox" id="chk60" onchange="toggleDone(60)"></td>
+  <td class="mono">Screenshot_2026-08-22_at_11.00.56_AM.png</td>
+  <td class="arrow">→</td>
+  <td class="mono target">bts-43.png</td>
+  <td><span class="badge">🖼️ photo</span><div class="ctx">Behind the Scenes - item #43</div></td>
+</tr>
+
+  </tbody></table>
+</div>
+
+<script>
+  const TOTAL = 60;
+  function updateProgress() {
+    let done = 0;
+    document.querySelectorAll('input[type="checkbox"]').forEach(c => { if (c.checked) done++; });
+    document.getElementById('progress-fill').style.width = (done / TOTAL * 100) + '%';
+    document.getElementById('progress-label').innerText = done + ' / ' + TOTAL + ' done';
+  }
+  function toggleDone(id) {
+    const row = document.querySelector('tr[data-id="row' + id + '"]');
+    const chk = document.getElementById('chk' + id);
+    row.classList.toggle('done', chk.checked);
+    localStorage.setItem('rakhi-rename-' + id, chk.checked ? '1' : '0');
+    updateProgress();
+  }
+  document.querySelectorAll('input[type="checkbox"]').forEach(c => {
+    const id = c.id.replace('chk', '');
+    const saved = localStorage.getItem('rakhi-rename-' + id);
+    if (saved === '1') {
+      c.checked = true;
+      document.querySelector('tr[data-id="row' + id + '"]').classList.add('done');
+    }
+    c.addEventListener('change', () => toggleDone(id));
+  });
+  updateProgress();
+</script>
+</body>
+</html>
