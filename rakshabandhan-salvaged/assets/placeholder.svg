@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#27272a"/>
+  <rect x="8" y="8" width="384" height="209" fill="none" stroke="#52525b" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="200" y="105" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="bold" fill="#a1a1aa" text-anchor="middle">Memory not added yet</text>
+  <text x="200" y="130" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#71717a" text-anchor="middle">check manifest.md for what goes here</text>
+</svg>
